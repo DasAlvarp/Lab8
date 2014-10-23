@@ -1,3 +1,5 @@
+import com.sun.istack.internal.Nullable;
+
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -49,9 +51,6 @@ public class CalcMachine extends JFrame {
 
 
     //variables
-    double input1;
-    double input2;
-    double output;
     String operator = "";
 
     String[] inputs = {"", ""};
@@ -168,7 +167,6 @@ public class CalcMachine extends JFrame {
             @Override
             public void actionPerformed(ActionEvent arg0)
             {
-                JButton b = (JButton) arg0.getSource();
                 out.setText("" + solve(inputs[0],inputs[1],operator));
                 finalizeText();
             }
@@ -197,7 +195,31 @@ public class CalcMachine extends JFrame {
 
     public void addText(JButton b) {
         String tempText = b.getText();
-        inputs[editing] += tempText;
+        if(tempText == ".")
+        {
+            boolean yarr = false;
+
+            for(int x = 0; x < inputs[editing].length(); x++)
+            {
+                if(inputs[editing].charAt(x) == '.')
+                {
+                    yarr = true;
+                }
+            }
+            if(yarr)
+            {
+                //do nothing.
+            }
+            else
+            {
+                inputs[editing] += tempText;
+            }
+
+        }
+        else
+        {
+            inputs[editing] += tempText;
+        }
     }
 
     public void operate(JButton b) {

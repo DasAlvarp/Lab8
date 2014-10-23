@@ -14,11 +14,10 @@ public class CalcMachine extends JFrame {
     //Output
     JLabel in1 = new JLabel();
     JLabel in2 = new JLabel();
-    JLabel litline = new JLabel();
+    JLabel litLine = new JLabel();
     JLabel out = new JLabel();
 
     //Buttons for input
-
     JButton numPad1 = new JButton("1");
     JButton numPad2 = new JButton("2");
     JButton numPad3 = new JButton("3");
@@ -69,10 +68,10 @@ public class CalcMachine extends JFrame {
         //add things to pnlUp;
         pnlUp.add(in1);
         pnlUp.add(in2);
-        pnlUp.add(litline);
+        pnlUp.add(litLine);
         pnlUp.add(out);
 
-        litline.setText(LINE);
+        litLine.setText(LINE);
 
         //add things to pnlDown
         //top layer

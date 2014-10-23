@@ -1,5 +1,3 @@
-import com.sun.istack.internal.Nullable;
-
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -195,7 +193,7 @@ public class CalcMachine extends JFrame {
 
     public void addText(JButton b) {
         String tempText = b.getText();
-        if(tempText == ".")
+        if(tempText.equals("."))
         {
             boolean yarr = false;
 
@@ -206,11 +204,7 @@ public class CalcMachine extends JFrame {
                     yarr = true;
                 }
             }
-            if(yarr)
-            {
-                //do nothing.
-            }
-            else
+            if(!yarr)
             {
                 inputs[editing] += tempText;
             }
